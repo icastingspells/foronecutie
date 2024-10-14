@@ -11,7 +11,7 @@ function changeClass() {
     }
     count +=1;
   });
-  buttonno.addEventListener("touchstart", () => {
+  buttonno.addEventListener("touchmove", () => {
     if (count < 4 && count > 0) {
       buttonno.classList.remove(`move${count - 1}`);
       buttonno.classList.add(`move${count}`);
