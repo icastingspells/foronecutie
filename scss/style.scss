@@ -1,0 +1,130 @@
+@import "_global";
+
+.wrapper {
+    height: 100%;
+}
+
+.content {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.frame1 {
+    width: 100%;
+    max-width: 320px;
+    user-select: none;
+
+    &.remove {
+        display: none;
+    }
+
+    &__headline {
+        text-align: center;
+        font-size: 31px;
+        font-weight: 700;
+    }
+
+    &__gif {
+        width: 100%;
+
+        & img {
+            width: 100%;
+            pointer-events: none;
+        }
+    }
+
+    &__button-section {
+        display: flex;
+        width: auto;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__button {
+        font-size: 24px;
+        border: 2px solid #263248;
+        color: #263248;
+        border-radius: 20px;
+        padding: 10px 0;
+        width: 100px;
+
+        &.button-yes {
+            background-color: rgb(253, 111, 222);
+            cursor: pointer;
+            margin-left: 20px;
+            animation: bttny 1.5s ease-in infinite;
+
+            &:hover {
+                animation-duration: 0.2s;
+            }
+        }
+
+        &.button-no {
+            background-color: #5b94ff;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            bottom: 0;
+            transition: all 0.5s;
+
+            &.move1 {
+                right: 210px;
+                bottom: 260px;
+            }
+
+            &.move2 {
+                right: 0;
+                bottom: 270px;
+            }
+
+            &.move3 {
+                right: 500%;
+                bottom: -1000%;
+            }
+        }
+    }
+}
+
+.frame2 {
+    width: 100%;
+    max-width: 320px;
+    display: none;
+    user-select: none;
+    &.active {
+        display: block;
+    }
+    &__headline {
+        text-align: center;
+        font-size: 31px;
+        font-weight: 700;
+    }
+    &__gif {
+        width: 100%;
+
+        & img {
+            width: 100%;
+            pointer-events: none;
+        }
+    }
+}
+
+@keyframes bttny {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
